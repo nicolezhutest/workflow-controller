@@ -1,0 +1,38 @@
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: "CI Test"
+
+# Run this workflow every time a new commit pushed to your repository
+on:
+  push:
+    # trigger through a push to any branch
+  workflow_dispatch:
+    # trigger through UI or API
+
+jobs:
+  # Job key
+  ci-test:
+    # Job name
+    name: Basic Test
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out a copy of repo on the machine above
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Run the test
+      - name: Run Basic Test
+        run: npm run test
