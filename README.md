@@ -1,4 +1,4 @@
-# workflow-bot
+# workflow-controller
 
 > A GitHub App built with [Probot](https://github.com/probot/probot) that A Probot Github App that cancels Github workflow triggers from external users.
 
